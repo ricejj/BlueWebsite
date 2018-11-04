@@ -6,3 +6,16 @@ html, body {
 .header{
   height: 10%;
 }
+
+.logoButton{
+  width: 100%;
+}
+
+#logoImage{
+  display: block;
+  min-height:30px;
+  max-height:50px;
+  margin-left: auto;
+  margin-right: auto;
+  //warning, the height of the image is computed by jQuery
+}
