@@ -3,6 +3,7 @@ html, body {
   height: 100%;
 }
 
+/*Logo-related classes*/
 .logoButton{
   width: 100%;
 }
@@ -14,4 +15,14 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   //warning, the height of the image is computed by jQuery
+}
+
+/*Classes related to the gallery display (a CSS grid)*/
+.gallery{
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+}
+
+.pictureStyle{
+  
 }
