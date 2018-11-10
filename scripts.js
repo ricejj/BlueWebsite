@@ -3,10 +3,23 @@
 var windowW=window.innerWidth;
 var windowH=window.innerHeight;
 
+//dealing with mobile devices
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+{
+  window.alert("Sorry, JayProd hasn't optimized\nthe website for mobile devices yet...\n Working on it though!\n:-)");
+}
+
 $(document).ready(function(){
   var logoImageH = 0.1*windowH;
   $("#logoImage").height(logoImageH);
   $("#logoImage").css('margin-top',0.3*logoImageH+'px');
+
+  //Setting up the size of the rows
+  var rowSize=0.4*windowH;
+  $("#gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+
+  //Setting up the size of the gap between the grid elements
+  $("#gallery").css("grid-gap","20px");
 
 //BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
 //AND HOW TO ADD THEM ONE BY ONE?

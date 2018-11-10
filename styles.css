@@ -20,9 +20,9 @@ html, body {
 /*Classes related to the gallery display (a CSS grid)*/
 .gallery{
   display: grid;
-  grid-template-columns: 20% 20% 20%;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .pictureStyle{
-  
+
 }
