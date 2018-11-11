@@ -31,14 +31,17 @@ $(document).ready(function(){
   //Setting up the size of the gap between the grid elements
   $("#gallery").css("grid-gap","20px");
 
+  var cell_width=$(".cell").width();
+  $(".pictureStyle").css("max-width",cell_width);
+
 //BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
 //AND HOW TO ADD THEM ONE BY ONE?
-  var numberOfPictures;
+  /*var numberOfPictures;
   for (var i; i<numberOfPictures+1; i++){
     jQuery('<div/>', {
       id: 'photo'+i,
       class: 'pictureStyle',
       title: 'now this div has a title!'
     }).appendTo('#gallery');
-  }
+  }*/
 });
