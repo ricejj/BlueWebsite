@@ -39,6 +39,8 @@ $(document).ready(function(){
 
 //BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
 //AND HOW TO ADD THEM ONE BY ONE?
+// MAYBE USE https://stackoverflow.com/questions/6994212/is-there-a-way-to-return-a-list-of-all-the-image-file-names-from-a-folder-using
+
   /*var numberOfPictures;
   for (var i; i<numberOfPictures+1; i++){
     jQuery('<div/>', {
