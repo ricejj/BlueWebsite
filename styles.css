@@ -3,6 +3,11 @@ html, body {
   height: 100%;
 }
 
+img{
+  /*preventing the right-click on images*/
+  pointer-events:none;
+}
+
 /*Logo-related classes*/
 .logoButton{
   width: 100%;
