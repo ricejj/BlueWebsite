@@ -49,4 +49,41 @@ $(document).ready(function(){
       title: 'now this div has a title!'
     }).appendTo('#gallery');
   }*/
+  var margLeft = $(".cell").css('padding');
+  margLeft = parseInt(margLeft,10);
+  var margTop = $(".cell").css('padding');
+  margTop = parseInt(margTop,10);
+
+  $(".cell").mousemove(function(e){
+    var imageInCell = jQuery(this).find("img");
+    var imgX = imageInCell.offset().left;
+    var cellX = $(this).offset().left;
+    var finX = imgX;
+    var finY = imgY;
+
+    var imgY = imageInCell.offset().top;
+    var cellY = $(this).offset().top
+
+    var x_in_cell = cellX + 0.5*cell_width
+                    - (2*margLeft/cell_width)*(e.pageX - cellX + cell_width/2);
+    var y_in_cell = cellY + 0.5*cell_height
+                    - (2*margTop/cell_height)*(e.pageY - cellY + cell_height/2)
+    imageInCell.offset({top:y_in_cell,left:x_in_cell});
+
+    /*$(this).mouseleave(function(){
+      imageInCell.offset({top:cellY, left:cellX});
+      imageInCell.css({'margin-left':'auto','margin-left':'auto'});
+    });*/
+  });
+
+  $(".pictureStyle").css('diplay','block');
+  $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
+
 });
+
+/*$(".cell").hover(function(e){
+  var imgX = this.offsetLeft;
+  var imgY = this.offsetTop;
+  var x_in_cell = e.pageX - imgX;
+  var y_in_cell = e.pageY - imgY;
+});*/
