@@ -11,6 +11,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
 $(window).on('resize', function() {
+  alert("Noooooo\nDon't shrink me, please!\n:'(\nI don't like being smaller...")
     if($(window).height() > $(window).width()) {
         $("#gallery").css("grid-template-columns", "1fr");
     }else{
