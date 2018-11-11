@@ -9,6 +9,16 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   window.alert("Sorry, JayProd hasn't optimized\nthe website for mobile devices yet...\n Working on it though!\n:-)");
 }
 
+//dealing with resizing the window (or lanscape <-> portrait on mobile)
+$(window).on('resize', function() {
+    if($(window).height() > $(window).width()) {
+        $("#gallery").css("grid-template-columns", "1fr");
+    }else{
+        $("#gallery").css("grid-template-columns", "1fr 1fr 1fr");
+    }
+})
+
+//on load of the page
 $(document).ready(function(){
   var logoImageH = 0.1*windowH;
   $("#logoImage").height(logoImageH);
