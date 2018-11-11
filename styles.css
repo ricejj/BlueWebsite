@@ -28,6 +28,11 @@ img{
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.cell{
+  border-color: coral;
+  border-width: thick;
+}
+
 .pictureStyle{
 
 }
