@@ -29,11 +29,16 @@ img{
 }
 
 .cell{
-  border-style: solid;
+  padding: 10px;
+
+/*tp view the cells, uncomment the end of this class*/
+  /*border-style: solid;
   border-color: coral;
-  border-width: thick;
+  border-width: thick;*/
 }
 
 .pictureStyle{
-  
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
 }

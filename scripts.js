@@ -11,11 +11,11 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
 $(window).on('resize', function() {
-  alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when\n you're done playing with the window size...")
+  alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
     if($(window).height() > $(window).width()) {
-        $("#gallery").css("grid-template-columns", "1fr");
+        $(".gallery").css("grid-template-columns", "1fr");
     }else{
-        $("#gallery").css("grid-template-columns", "1fr 1fr 1fr");
+        $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
     }
 })
 
@@ -26,14 +26,16 @@ $(document).ready(function(){
   $("#logoImage").css('margin-top',0.3*logoImageH+'px');
 
   //Setting up the size of the rows
-  var rowSize=0.4*windowH;
-  $("#gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+  var rowSize=0.33*windowH;
+  $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+
+  //Resizing the images in the cells
+  var cell_width=$(".cell").width();
+  var cell_height=$(".cell").height();
+  $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
 
   //Setting up the size of the gap between the grid elements
-  $("#gallery").css("grid-gap","20px");
-
-  var cell_width=$(".cell").width();
-  $(".pictureStyle").css("max-width",cell_width);
+  $(".gallery").css("grid-gap","20px");
 
 //BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
 //AND HOW TO ADD THEM ONE BY ONE?
