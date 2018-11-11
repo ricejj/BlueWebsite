@@ -29,10 +29,13 @@ img{
 }
 
 .cell{
+  border-style: solid;
   border-color: coral;
   border-width: thick;
 }
 
 .pictureStyle{
-
+  border-style: solid;
+  border-color: #OOAAFF;
+  border-width: thick;
 }
