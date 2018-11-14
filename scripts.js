@@ -49,7 +49,7 @@ $(document).ready(function(){
       title: 'now this div has a title!'
     }).appendTo('#gallery');
   }*/
-  var margLeft = $(".cell").css('padding');
+  /*var margLeft = $(".cell").css('padding');
   margLeft = parseInt(margLeft,10);
   var margTop = $(".cell").css('padding');
   margTop = parseInt(margTop,10);
@@ -69,17 +69,24 @@ $(document).ready(function(){
     var y_in_cell = cellY + 0.5*cell_height
                     - (2*margTop/cell_height)*(e.pageY - cellY + cell_height/2)
     imageInCell.offset({top:y_in_cell,left:x_in_cell});
-
+*/
     /*$(this).mouseleave(function(){
       imageInCell.offset({top:cellY, left:cellX});
       imageInCell.css({'margin-left':'auto','margin-left':'auto'});
     });*/
-  });
 
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
 
-});
+  //Creating the parallax instance
+  var scene = $('#gallery').get(0);
+  var parallaxInstance = new Parallax(scene, {
+    relativeInput: true,
+    clipRelativeInput: true,
+    hoverOnly: true
+  });
+
+  $(".cell").css('position','inherit');
 
 /*$(".cell").hover(function(e){
   var imgX = this.offsetLeft;
@@ -87,3 +94,5 @@ $(document).ready(function(){
   var x_in_cell = e.pageX - imgX;
   var y_in_cell = e.pageY - imgY;
 });*/
+
+});
