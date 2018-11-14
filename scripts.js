@@ -41,8 +41,9 @@ $(document).ready(function(){
 //AND HOW TO ADD THEM ONE BY ONE?
 // MAYBE USE https://stackoverflow.com/questions/6994212/is-there-a-way-to-return-a-list-of-all-the-image-file-names-from-a-folder-using
 
-  /*var numberOfPictures;
-  for (var i; i<numberOfPictures+1; i++){
+  var listOfPics = $("#gallery").children();
+  var numberOfPictures = listOfPics.length;
+  /*for (var i; i<numberOfPictures+1; i++){
     jQuery('<div/>', {
       id: 'photo'+i,
       class: 'pictureStyle',
@@ -78,8 +79,18 @@ $(document).ready(function(){
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
 
-  //Creating the parallax instance
+  //SETTING UP THE PARALLAX EFFECT
   var scene = $('#gallery').get(0);
+  //getting an alternating data-depth every other picture
+  var i;
+  for(i = 0; i<numberOfPictures; i++){
+    if(i%2==0){
+      $(listOfPics[i]).attr("data-depth","0.2");
+    }else{
+      $(listOfPics[i]).attr("data-depth","0.25");
+    }
+  }
+  //Creating the parallax instance
   var parallaxInstance = new Parallax(scene, {
     relativeInput: true,
     clipRelativeInput: true,
@@ -87,6 +98,8 @@ $(document).ready(function(){
   });
 
   $(".cell").css('position','inherit');
+
+
 
 /*$(".cell").hover(function(e){
   var imgX = this.offsetLeft;
