@@ -40,12 +40,72 @@ $(document).ready(function(){
 //BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
 //AND HOW TO ADD THEM ONE BY ONE?
 // MAYBE USE https://stackoverflow.com/questions/6994212/is-there-a-way-to-return-a-list-of-all-the-image-file-names-from-a-folder-using
-  /*var numberOfPictures;
-  for (var i; i<numberOfPictures+1; i++){
+
+  var listOfPics = $("#gallery").children();
+  var numberOfPictures = listOfPics.length;
+  /*for (var i; i<numberOfPictures+1; i++){
     jQuery('<div/>', {
       id: 'photo'+i,
       class: 'pictureStyle',
       title: 'now this div has a title!'
     }).appendTo('#gallery');
   }*/
+  /*var margLeft = $(".cell").css('padding');
+  margLeft = parseInt(margLeft,10);
+  var margTop = $(".cell").css('padding');
+  margTop = parseInt(margTop,10);
+
+  $(".cell").mousemove(function(e){
+    var imageInCell = jQuery(this).find("img");
+    var imgX = imageInCell.offset().left;
+    var cellX = $(this).offset().left;
+    var finX = imgX;
+    var finY = imgY;
+
+    var imgY = imageInCell.offset().top;
+    var cellY = $(this).offset().top
+
+    var x_in_cell = cellX + 0.5*cell_width
+                    - (2*margLeft/cell_width)*(e.pageX - cellX + cell_width/2);
+    var y_in_cell = cellY + 0.5*cell_height
+                    - (2*margTop/cell_height)*(e.pageY - cellY + cell_height/2)
+    imageInCell.offset({top:y_in_cell,left:x_in_cell});
+*/
+    /*$(this).mouseleave(function(){
+      imageInCell.offset({top:cellY, left:cellX});
+      imageInCell.css({'margin-left':'auto','margin-left':'auto'});
+    });*/
+
+  $(".pictureStyle").css('diplay','block');
+  $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
+
+  //SETTING UP THE PARALLAX EFFECT
+  var scene = $('#gallery').get(0);
+  //getting an alternating data-depth every other picture
+  var i;
+  for(i = 0; i<numberOfPictures; i++){
+    if(i%2==0){
+      $(listOfPics[i]).attr("data-depth","0.2");
+    }else{
+      $(listOfPics[i]).attr("data-depth","0.25");
+    }
+  }
+  //Creating the parallax instance
+  var parallaxInstance = new Parallax(scene, {
+    relativeInput: true,
+    clipRelativeInput: true,
+    hoverOnly: true
+  });
+
+  $(".cell").css('position','inherit');
+
+
+
+/*$(".cell").hover(function(e){
+  var imgX = this.offsetLeft;
+  var imgY = this.offsetTop;
+  var x_in_cell = e.pageX - imgX;
+  var y_in_cell = e.pageY - imgY;
+});*/
+
 });
