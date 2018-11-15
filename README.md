@@ -1,2 +1,4 @@
 # BlueWebsite
-The repository for BlueSky's website. When created, it aims at building the BluePix gallery. 
+The repository for the JayProd website. 
+
+The first part is the _*the jay initiative*_ photo gallery.
