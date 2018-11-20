@@ -8,7 +8,26 @@ img{
   pointer-events:none;
 }
 
-/*Logo-related classes*/
+.content{
+
+}
+
+/*header-related classes*/
+.header {
+
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/*.sticky + .content {
+  padding-top: 102px;
+}*/
+
 .logoButton{
   width: 100%;
 }
