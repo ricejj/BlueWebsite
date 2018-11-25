@@ -3,7 +3,7 @@
 var windowW=window.innerWidth;
 var windowH=window.innerHeight;
 
-var picsList = [
+const picsList = [
   "_ b l e u s i n r e k t o u r b",
   "-serious-he",
   "-shadow-of-the-tree",
@@ -12,9 +12,24 @@ var picsList = [
   "-the-face-of-wisdom"
 ];
 
+//A function to add ".jpg" at the end of a name
 function jpgize(picName){
   return picName+".jpg";
 }
+
+//Function to shuffle the elements of a list
+// cf https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
 
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
@@ -44,7 +59,13 @@ $(document).ready(function(){
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
 
   //Filling the gallery with the actual pictures
-
+  //shuffling up
+  var shuffledPicsList = new Array(picsList.length).fill('0');
+  for(var it = 0; it<picsList.length; it++){
+    shuffledPicsList[it] = picsList[it];
+  }
+  shuffle(shuffledPicsList);
+  //Now we need to fill...
 
   //Resizing the images in the cells
   var cell_width=$(".cell").width();
