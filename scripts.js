@@ -3,6 +3,19 @@
 var windowW=window.innerWidth;
 var windowH=window.innerHeight;
 
+var picsList = [
+  "_ b l e u s i n r e k t o u r b",
+  "-serious-he",
+  "-shadow-of-the-tree",
+  "-she's-here",
+  "the way 1 ld",
+  "-the-face-of-wisdom"
+];
+
+function jpgize(picName){
+  return picName+".jpg";
+}
+
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 {
@@ -29,6 +42,9 @@ $(document).ready(function(){
   //Setting up the size of the rows
   var rowSize=0.33*windowH;
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+
+  //Filling the gallery with the actual pictures
+
 
   //Resizing the images in the cells
   var cell_width=$(".cell").width();
