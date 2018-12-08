@@ -4,7 +4,7 @@ var windowW=window.innerWidth;
 var windowH=window.innerHeight;
 
 const picsList = [
-  "_ b l e u s i n r e k t o u r b",
+  " b l e u s i n r e k t o u r b",
   "-serious-he",
   "-shadow-of-the-tree",
   "-she's-here",
@@ -65,67 +65,45 @@ $(document).ready(function(){
     shuffledPicsList[it] = picsList[it];
   }
   shuffle(shuffledPicsList);
-  //Now we need to fill...
+
+
+
+  //Setting up the size of the gap between the grid elements
+  $(".gallery").css("grid-gap","20px");
+
+  // Filling the gallery
+  var numberOfPictures = shuffledPicsList.length;
+  for (var i=0; i<numberOfPictures; i++){
+    console.log(i);
+    var div = jQuery('<div/>', {
+      id: 'cell'+i,
+      class: 'cell content',
+      title: ''
+    }).append(jQuery('<img/>', {
+      id: 'image'+i,
+      class: 'pictureStyle',
+      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
+    }));
+    div.appendTo('#gallery');
+  }
 
   //Resizing the images in the cells
   var cell_width=$(".cell").width();
   var cell_height=$(".cell").height();
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
-
-  //Setting up the size of the gap between the grid elements
-  $(".gallery").css("grid-gap","20px");
-
-//BIG  QUESTION: HOW TO COUNT THE numberOfPictures?
-//AND HOW TO ADD THEM ONE BY ONE?
-// MAYBE USE https://stackoverflow.com/questions/6994212/is-there-a-way-to-return-a-list-of-all-the-image-file-names-from-a-folder-using
-
-  var listOfPics = $("#gallery").children();
-  var numberOfPictures = listOfPics.length;
-  /*for (var i; i<numberOfPictures+1; i++){
-    jQuery('<div/>', {
-      id: 'photo'+i,
-      class: 'pictureStyle',
-      title: 'now this div has a title!'
-    }).appendTo('#gallery');
-  }*/
-  /*var margLeft = $(".cell").css('padding');
-  margLeft = parseInt(margLeft,10);
-  var margTop = $(".cell").css('padding');
-  margTop = parseInt(margTop,10);
-
-  $(".cell").mousemove(function(e){
-    var imageInCell = jQuery(this).find("img");
-    var imgX = imageInCell.offset().left;
-    var cellX = $(this).offset().left;
-    var finX = imgX;
-    var finY = imgY;
-
-    var imgY = imageInCell.offset().top;
-    var cellY = $(this).offset().top
-
-    var x_in_cell = cellX + 0.5*cell_width
-                    - (2*margLeft/cell_width)*(e.pageX - cellX + cell_width/2);
-    var y_in_cell = cellY + 0.5*cell_height
-                    - (2*margTop/cell_height)*(e.pageY - cellY + cell_height/2)
-    imageInCell.offset({top:y_in_cell,left:x_in_cell});
-*/
-    /*$(this).mouseleave(function(){
-      imageInCell.offset({top:cellY, left:cellX});
-      imageInCell.css({'margin-left':'auto','margin-left':'auto'});
-    });*/
-
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
 
   //SETTING UP THE PARALLAX EFFECT
   var scene = $('#gallery').get(0);
   //getting an alternating data-depth every other picture
-  var i;
-  for(i = 0; i<numberOfPictures; i++){
-    if(i%2==0){
-      $(listOfPics[i]).attr("data-depth","0.2");
+  var j;
+  var galleryContent = $("#gallery").children();
+  for(j = 0; j<numberOfPictures; j++){
+    if(j%2==0){
+      $(galleryContent[j]).attr("data-depth","0.2");
     }else{
-      $(listOfPics[i]).attr("data-depth","0.25");
+      $(galleryContent[j]).attr("data-depth","0.25");
     }
   }
   //Creating the parallax instance
@@ -149,7 +127,7 @@ $(document).ready(function(){
 });
 
 //Making the header sticky
-window.onscroll = function() {stickyHeader()};
+/*window.onscroll = function() {stickyHeader()};
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 function stickyHeader() {
@@ -158,4 +136,4 @@ function stickyHeader() {
   } else {
     header.classList.remove("sticky");
   }
-}
+} */
