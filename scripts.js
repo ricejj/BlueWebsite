@@ -66,8 +66,6 @@ $(document).ready(function(){
   }
   shuffle(shuffledPicsList);
 
-
-
   //Setting up the size of the gap between the grid elements
   $(".gallery").css("grid-gap","20px");
 
@@ -75,12 +73,14 @@ $(document).ready(function(){
   var numberOfPictures = shuffledPicsList.length;
   for (var i=0; i<numberOfPictures; i++){
     console.log(i);
-    var div = jQuery('<div/>', {
+    var div = jQuery('<a/>', {
       id: 'cell'+i,
       class: 'cell content',
-      title: ''
+      title: 'data-fluidbox',
+      href:'images/gallery/big/big_'+jpgize(shuffledPicsList[i]),
     }).append(jQuery('<img/>', {
       id: 'image'+i,
+      alt: '',
       class: 'pictureStyle',
       src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
     }));
@@ -112,8 +112,15 @@ $(document).ready(function(){
     clipRelativeInput: true,
     hoverOnly: true
   });
+  $('.cell').fluidbox();
+
+  $('.cell').click(function() {
+    $(this).fluidbox('open'); 
+  });
 
   $(".cell").css('position','inherit');
+
+
 
 
 
