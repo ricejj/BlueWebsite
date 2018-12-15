@@ -56,6 +56,43 @@ $(window).on('resize', function() {
     }
 })
 
+//Functions for modals
+// Open the Modal
+function openModal() {
+  document.getElementById('modal').style.display = "block";
+}
+// Close the Modal
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+var slideIndex;
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  //var dots = document.getElementsByClassName("demo");
+  //var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  /*for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }*/
+  slides[slideIndex-1].style.display = "block";
+  /*dots[slideIndex-1].className += " active";*/
+  /*captionText.innerHTML = dots[slideIndex-1].alt;*/
+}
+
+
 //on load of the page
 $(document).ready(function(){
   var logoImageH = 0.1*windowH;
@@ -96,8 +133,9 @@ $(document).ready(function(){
       src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
     }));
     div.appendTo('#gallery');
-    //adding the modal (pop-up with the "big_" picture)
+    //adding the modals (pop-up with the "big_" picture)
     var div2 = jQuery('<div/>', {
+      class: 'slides',
       id: 'slide'+i});
     var n='images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]);
     div2.append(jQuery('<img/>', {
@@ -107,6 +145,9 @@ $(document).ready(function(){
     }));
     div2.appendTo('#modalsList');
   }
+  //showing the slides
+  slideIndex = 1;
+  showSlides(slideIndex);
 
   //Resizing the images in the cells
   var cell_width=$(".cell").width();

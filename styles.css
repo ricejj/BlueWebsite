@@ -103,7 +103,7 @@ img{
   cursor: pointer;
 }
 /* Hide the slides by default */
-.mySlides {
+.slides {
   display: none;
 }
 /* Next & previous buttons */
