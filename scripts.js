@@ -31,7 +31,7 @@ function shuffle(a) {
 }
 
 //a function to give the right style so that the picture fills its zone
-function fill_landscape(image){
+function fill(image){
   if(image.height > image.width){
     return("height:100%");
   }else{
@@ -102,7 +102,7 @@ $(document).ready(function(){
     var n='images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]);
     div2.append(jQuery('<img/>', {
       id: 'big_image'+i,
-      style: fill_landscape(n),
+      style: fill(n),
       src:n,
     }));
     div2.appendTo('#modalsList');
