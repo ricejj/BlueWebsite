@@ -30,11 +30,14 @@ function shuffle(a) {
     return a;
 }
 
-/*//a function to give the right style so that the picture fills its zone
+//a function to give the right style so that the picture fills its zone
 function fill_landscape(image){
-  if(image.length > )
-
-}*/
+  if(image.height > image.width){
+    return("height:100%");
+  }else{
+    return("width:100%");
+  }
+}
 
 
 //dealing with mobile devices
@@ -85,6 +88,7 @@ $(document).ready(function(){
     var div = jQuery('<div/>', {
       id: 'cell'+i,
       class: 'cell content',
+      onclick: "openModal();currentSlide("+i+")",
       title: ''});
     div.append(jQuery('<img/>', {
       id: 'image'+i,
@@ -92,15 +96,16 @@ $(document).ready(function(){
       src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
     }));
     div.appendTo('#gallery');
-    /*//adding the modal (pop-up with the "big_" picture)
+    //adding the modal (pop-up with the "big_" picture)
     var div2 = jQuery('<div/>', {
-      id: 'slide'+i
-    }).append(jQuery('<img/>', {
+      id: 'slide'+i});
+    var n='images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]);
+    div2.append(jQuery('<img/>', {
       id: 'big_image'+i,
-      class: 'pictureStyle',
-      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
+      style: fill_landscape(n),
+      src:n,
     }));
-    div2.appendTo('#modalsList');*/
+    div2.appendTo('#modalsList');
   }
 
   //Resizing the images in the cells
