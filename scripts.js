@@ -30,6 +30,12 @@ function shuffle(a) {
     return a;
 }
 
+/*//a function to give the right style so that the picture fills its zone
+function fill_landscape(image){
+  if(image.length > )
+
+}*/
+
 
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
@@ -75,16 +81,26 @@ $(document).ready(function(){
   var numberOfPictures = shuffledPicsList.length;
   for (var i=0; i<numberOfPictures; i++){
     console.log(i);
+    //adding the pic to the gallery
     var div = jQuery('<div/>', {
       id: 'cell'+i,
       class: 'cell content',
-      title: ''
-    }).append(jQuery('<img/>', {
+      title: ''});
+    div.append(jQuery('<img/>', {
       id: 'image'+i,
       class: 'pictureStyle',
       src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
     }));
     div.appendTo('#gallery');
+    /*//adding the modal (pop-up with the "big_" picture)
+    var div2 = jQuery('<div/>', {
+      id: 'slide'+i
+    }).append(jQuery('<img/>', {
+      id: 'big_image'+i,
+      class: 'pictureStyle',
+      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
+    }));
+    div2.appendTo('#modalsList');*/
   }
 
   //Resizing the images in the cells
