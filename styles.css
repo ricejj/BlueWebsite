@@ -4,8 +4,12 @@ html, body {
 }
 
 img{
-  /*preventing the right-click on images*/
-  pointer-events:none;
+  /*preventing the drag and drop*/
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+   user-drag: none;
 }
 
 .content{
@@ -81,9 +85,6 @@ img{
 /* Modal Content */
 .modal-content {
   position: relative;
-  /*display:block;
-  margin-left: auto;
-  margin-right: auto;*/
   margin: auto;
   padding: 0;
   width: 90%;
