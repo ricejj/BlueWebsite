@@ -61,6 +61,7 @@ img{
   margin-left: auto;
   margin-right: auto;
   box-shadow: 1px 5px 15px #aaaaaa;
+  pointer-events: all;
 }
 
 /*Classes related to the modals*/
@@ -75,13 +76,14 @@ img{
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: black;
-  opacity: 0.3;
+  background-color: rgba(0, 0, 0, 0.8)
 }
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  /*display:block;
+  margin-left: auto;
+  margin-right: auto;*/
   margin: auto;
   padding: 0;
   width: 90%;
@@ -133,11 +135,8 @@ img{
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.bigPictures{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -30,15 +30,6 @@ function shuffle(a) {
     return a;
 }
 
-//a function to give the right style so that the picture fills its zone
-function fill(image){
-  if(image.height > image.width){
-    return("height:100%");
-  }else{
-    return("width:100%");
-  }
-}
-
 
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
@@ -77,19 +68,12 @@ var slideIndex;
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("slides");
-  //var dots = document.getElementsByClassName("demo");
-  //var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  /*for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }*/
-  slides[slideIndex-1].style.display = "block";
-  /*dots[slideIndex-1].className += " active";*/
-  /*captionText.innerHTML = dots[slideIndex-1].alt;*/
+  slides[slideIndex].style.display = "block";
 }
 
 
@@ -125,22 +109,24 @@ $(document).ready(function(){
     var div = jQuery('<div/>', {
       id: 'cell'+i,
       class: 'cell content',
-      onclick: "openModal();currentSlide("+i+")",
-      title: ''});
+      title:'',
+    });
     div.append(jQuery('<img/>', {
       id: 'image'+i,
       class: 'pictureStyle',
+      onclick: "openModal();currentSlide("+i+")",
       src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
     }));
     div.appendTo('#gallery');
     //adding the modals (pop-up with the "big_" picture)
     var div2 = jQuery('<div/>', {
       class: 'slides',
-      id: 'slide'+i});
-    var n='images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]);
+      id: 'slide'+i,
+    });
+    var n='images/gallery/big/big_'+jpgize(shuffledPicsList[i]);
     div2.append(jQuery('<img/>', {
       id: 'big_image'+i,
-      style: fill(n),
+      class: "bigPictures",
       src:n,
     }));
     div2.appendTo('#modalsList');
@@ -155,6 +141,11 @@ $(document).ready(function(){
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
+
+  //Resizing the images in the modals
+  var modal_width=$("#modal").width();
+  var modal_height=$("#modal").height();
+  $(".bigPictures").css({"max-width":0.9*modal_width,"max-height":0.9*modal_height});
 
   //SETTING UP THE PARALLAX EFFECT
   var scene = $('#gallery').get(0);
@@ -187,6 +178,7 @@ $(document).ready(function(){
 });*/
 
 });
+
 
 //Making the header sticky
 /*window.onscroll = function() {stickyHeader()};
