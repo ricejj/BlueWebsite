@@ -73,7 +73,7 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slides[slideIndex].style.display = "block";
+  slides[slideIndex-1].style.display = "block";
 }
 
 
@@ -103,7 +103,7 @@ $(document).ready(function(){
 
   // Filling the gallery
   var numberOfPictures = shuffledPicsList.length;
-  for (var i=0; i<numberOfPictures; i++){
+  for (var i=1; i<=numberOfPictures; i++){
     console.log(i);
     //adding the pic to the gallery
     var div = jQuery('<div/>', {
@@ -115,7 +115,7 @@ $(document).ready(function(){
       id: 'image'+i,
       class: 'pictureStyle',
       onclick: "openModal();currentSlide("+i+")",
-      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
+      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i-1]),
     }));
     div.appendTo('#gallery');
     //adding the modals (pop-up with the "big_" picture)
@@ -123,7 +123,7 @@ $(document).ready(function(){
       class: 'slides',
       id: 'slide'+i,
     });
-    var n='images/gallery/big/big_'+jpgize(shuffledPicsList[i]);
+    var n='images/gallery/big/big_'+jpgize(shuffledPicsList[i-1]);
     div2.append(jQuery('<img/>', {
       id: 'big_image'+i,
       class: "bigPictures",
