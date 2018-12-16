@@ -47,6 +47,36 @@ $(window).on('resize', function() {
     }
 })
 
+//Functions for modals
+// Open the Modal
+function openModal() {
+  document.getElementById('modal').style.display = "block";
+}
+// Close the Modal
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+var slideIndex;
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+
 //on load of the page
 $(document).ready(function(){
   var logoImageH = 0.1*windowH;
@@ -73,19 +103,37 @@ $(document).ready(function(){
 
   // Filling the gallery
   var numberOfPictures = shuffledPicsList.length;
-  for (var i=0; i<numberOfPictures; i++){
+  for (var i=1; i<=numberOfPictures; i++){
     console.log(i);
+    //adding the pic to the gallery
     var div = jQuery('<div/>', {
       id: 'cell'+i,
       class: 'cell content',
-      title: ''
-    }).append(jQuery('<img/>', {
+      title:'',
+    });
+    div.append(jQuery('<img/>', {
       id: 'image'+i,
       class: 'pictureStyle',
-      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i]),
+      onclick: "openModal();currentSlide("+i+")",
+      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i-1]),
     }));
     div.appendTo('#gallery');
+    //adding the modals (pop-up with the "big_" picture)
+    var div2 = jQuery('<div/>', {
+      class: 'slides',
+      id: 'slide'+i,
+    });
+    var n='images/gallery/big/big_'+jpgize(shuffledPicsList[i-1]);
+    div2.append(jQuery('<img/>', {
+      id: 'big_image'+i,
+      class: "bigPictures",
+      src:n,
+    }));
+    div2.appendTo('#modalsList');
   }
+  //showing the slides
+  slideIndex = 1;
+  showSlides(slideIndex);
 
   //Resizing the images in the cells
   var cell_width=$(".cell").width();
@@ -93,6 +141,11 @@ $(document).ready(function(){
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
+
+  //Resizing the images in the modals
+  var modal_width=$("#modal").width();
+  var modal_height=$("#modal").height();
+  $(".bigPictures").css({"max-width":0.9*modal_width,"max-height":0.9*modal_height});
 
   //SETTING UP THE PARALLAX EFFECT
   var scene = $('#gallery').get(0);
@@ -125,6 +178,7 @@ $(document).ready(function(){
 });*/
 
 });
+
 
 //Making the header sticky
 /*window.onscroll = function() {stickyHeader()};

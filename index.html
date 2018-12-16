@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
-<body>
+<body oncontextmenu="return false;">
   <div class="header" id="myHeader">
     <a href="#default" class="logoButton" id="logoButton">
         <img src="images\constant\tji_noir.png" id="logoImage" alt="the jay initiative">
@@ -21,7 +21,18 @@
   <p> this is before the grid </p>
   <!-- the gallery is a "simple" CSS grid filled with images -->
   <div class="gallery" id="gallery">
-    
+
+  </div>
+
+<!-- this is where the "big_" images are displayed-->
+<!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+  <div class="modal" id="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" id="modalsList">
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
   </div>
 
   <p> this is after the grid </p>
