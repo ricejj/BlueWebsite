@@ -1,12 +1,17 @@
+//declaring the variables for the width and height of the window
+// cf https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window
+var windowW=window.innerWidth;
+var windowH=window.innerHeight;
+
 //on load of the page
 $(document).ready(function(){
 
   //Adding the header with the logo
-  var logoImageH = 0.1*windowH;
+  /*var logoImageH = 0.1*windowH;
   $("#myHeader").height(logoImageH);
   $("#myHeader").width(windowW);
-  $("#logoImage").css('margin-top',0.3*logoImageH+'px');
-
+  $("#logoImage").css('margin-top',0.3*logoImageH+'px');*/
+  //OBSOLETE --> done with the inline CSS now
 });
 
   //Making the header sticky
