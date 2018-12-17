@@ -79,6 +79,8 @@ function showSlides(n) {
 
 //on load of the page
 $(document).ready(function(){
+
+  //Adding the header with the logo
   var logoImageH = 0.1*windowH;
   $("#myHeader").height(logoImageH);
   $("#myHeader").width(windowW);
