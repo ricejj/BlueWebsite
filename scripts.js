@@ -80,12 +80,6 @@ function showSlides(n) {
 //on load of the page
 $(document).ready(function(){
 
-  //Adding the header with the logo
-  var logoImageH = 0.1*windowH;
-  $("#myHeader").height(logoImageH);
-  $("#myHeader").width(windowW);
-  $("#logoImage").css('margin-top',0.3*logoImageH+'px');
-
   //Setting up the size of the rows
   var rowSize=0.33*windowH;
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
@@ -171,25 +165,4 @@ $(document).ready(function(){
   $(".cell").css('position','inherit');
 
 
-
-/*$(".cell").hover(function(e){
-  var imgX = this.offsetLeft;
-  var imgY = this.offsetTop;
-  var x_in_cell = e.pageX - imgX;
-  var y_in_cell = e.pageY - imgY;
-});*/
-
 });
-
-
-//Making the header sticky
-/*window.onscroll = function() {stickyHeader()};
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-function stickyHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-} */
