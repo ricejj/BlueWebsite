@@ -8,6 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="header_scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
     <style media="all and (orientation: landscape)">
       #aboutPictureZone{
         position: relative;
@@ -15,6 +17,15 @@
         border-radius: 50%;
         height: 35vh;
         width: 52.5vh;
+      }
+      #aboutText>p{
+        font-size: 1.9vw;
+      }
+      #aboutText>address{
+        font-size:1.9vw;
+      }
+      #aboutText>h1{
+        font-size: 3vw;
       }
     </style>
     <style media="all and (orientation: portrait)">
@@ -28,10 +39,34 @@
       #aboutPicture{
         margin-left:-25%;
       }
+      #aboutText>p{
+        font-size: 4vw;
+      }
+      #aboutText>address{
+        font-size: 4vw;
+      }
+      #aboutText>h1{
+        font-size: 5.2vw;
+      }
+
     </style>
     <style media="all">
       #aboutPicture{
         height: 100%;
+      }
+
+      #aboutText{
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      #aboutText>p{
+        font-family: 'Charm', cursive;
+      }
+      #aboutText>h1,address{
+        font-family: 'Lato', sans-serif;
+        color: #444;
+        font-style: normal;
+        text-align: center;
       }
     </style>
   </head>
@@ -52,6 +87,26 @@
          id="aboutPicture">
     </div>
 
+    <br>
+
+    <div class="" id="aboutText">
+      <h1>Welcome to the JayProd website!</h1>
+      <p>JayProd is mostly about audiovisual creation: we try to create moments
+        through image and sound.</p>
+      <p>This website goes with a strong philosophy: it is collaborative
+        and home-made. It is coded "from scratch" (because it's so much more fun
+        than Wordpress) and hosted by us, a group of imaginative engineers, and
+        it is constantly evolving, testing new concepts and features.</p>
+      <p>Analytics on the site's use will drive the features of the site, but
+      your feedback being so much more valuable than a pile of numbers, tell us
+      what you think!
+      </p>
+      <address>
+        Contact us! <br>
+        <a href="mailto:jean@lepeudry.fr">jean@lepeudry.fr</a>
+      </address>
+    </div>
+    <br>
 
   </body>
 </html>
