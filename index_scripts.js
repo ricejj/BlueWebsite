@@ -6,9 +6,26 @@ var windowH=window.innerHeight;
 const picsList = [
   " b l e u s i n r e k t o u r b",
   "-serious-he",
+  "-an-old-photograph",
+  "-three-statues",
+  "a-look-into-darkness",
+  "a-neck-problem",
+  "bronze",
+  "fly-bird",
+  "four-looks-on-the-memorial",
+  "headlights",
+  "IMG_7558_dying-light",
+  "IMG_7585_shadows-of-an-evening-sky",
+  "IMG_7612_all-straight",
+  "IMG_7633_christmas-2018",
+  "memo",
+  "one-look-on-the-memorial",
+  "playing-with-shadows",
+  "proud-proud-regular-windows",
+  "sour",
   "-shadow-of-the-tree",
-  "-she's-here",
-  "the way 1 ld",
+  //"-she's-here",
+  //"the way 1 ld",
   "-the-face-of-wisdom"
 ];
 
@@ -39,7 +56,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
 $(window).on('resize', function() {
-  alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
+  //alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
     if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
     }else{
@@ -111,7 +128,7 @@ $(document).ready(function(){
       id: 'image'+i,
       class: 'pictureStyle',
       onclick: "openModal();currentSlide("+i+")",
-      src:'images/gallery/thumbnails/tmb_'+jpgize(shuffledPicsList[i-1]),
+      src:'https://www.jayprod.com/images/gallery/tmb_'+jpgize(shuffledPicsList[i-1]),
     }));
     div.appendTo('#gallery');
     //adding the modals (pop-up with the "big_" picture)
@@ -119,7 +136,7 @@ $(document).ready(function(){
       class: 'slides',
       id: 'slide'+i,
     });
-    var n='images/gallery/big/big_'+jpgize(shuffledPicsList[i-1]);
+    var n='https://www.jayprod.com/images/gallery/big_'+jpgize(shuffledPicsList[i-1]);
     div2.append(jQuery('<img/>', {
       id: 'big_image'+i,
       class: "bigPictures",
