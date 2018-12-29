@@ -1,6 +1,11 @@
 html, body {
-  width : 100%;
+
+}
+
+body{
   height: 100%;
+  margin-left:3vh;
+  margin-right:3vh;
 }
 
 img{
@@ -10,6 +15,12 @@ img{
   -moz-user-drag: none;
   -o-user-drag: none;
    user-drag: none;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content{
@@ -32,17 +43,52 @@ img{
   padding-top: 102px;
 }*/
 
-.logoButton{
+.header{
+  display: inline-block;
   width: 100%;
+  height: 10%;
+  margin-top: 0.3%;
 }
 
-#logoImage{
-  display: block;
+#myHeader>a{
+
+}
+
+/*#myHeader>a>img{
   min-height:30px;
   max-height:50px;
   margin-left: auto;
   margin-right: auto;
-  //warning, the height of the image is computed by jQuery
+}*/
+
+.logoButton{
+  float: left;
+  height: 100%;
+}
+
+.instaButton{
+  float: right;
+}
+
+.aboutButton{
+  float: right;
+}
+
+#logoImage{
+  min-height:30px;
+  max-height:50px;
+}
+
+#JPicon{
+  height:100%;
+  min-height:20px;
+  max-height:40px;
+}
+
+#instaLogo{
+  height:100%;
+  min-height:20px;
+  max-height:40px;
 }
 
 /*Classes related to the gallery display (a CSS grid)*/
