@@ -6,16 +6,14 @@ var windowH=window.innerHeight;
 //on load of the page
 $(document).ready(function(){
 
-  var logoH = $("#logoImage").height();
-  $("#JPicon").height(logoH);
-  $("instaLogo").height(logoH);
-  console.log("ok");
-  //Adding the header with the logo
-  /*var logoImageH = 0.1*windowH;
-  $("#myHeader").height(logoImageH);
-  $("#myHeader").width(windowW);
-  $("#logoImage").css('margin-top',0.3*logoImageH+'px');*/
-  //OBSOLETE --> done with the inline CSS now
+  var logoH = $("#logoButton").height();
+  $("#logoImage").css('padding-top',0.20*logoH+'px');
+  $("#aboutButton").height(logoH+'px');
+  $("#aboutButton").width(logoH+'px');
+  $("#aboutButton").css('padding',0.28*logoH+'px');
+  $("#instaButton").height(logoH+'px');
+  $("#instaButton").width(logoH+'px');
+  $("#instaButton").css('padding',0.25*logoH+'px');
 });
 
   //Making the header sticky

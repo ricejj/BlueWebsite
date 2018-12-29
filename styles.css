@@ -1,4 +1,8 @@
 html, body {
+
+}
+
+body{
   height: 100%;
   margin-left:3vh;
   margin-right:3vh;
@@ -58,18 +62,16 @@ img{
 }*/
 
 .logoButton{
-  left:0px;
-  width: 80%;
+  float: left;
+  height: 100%;
 }
 
 .instaButton{
   float: right;
-  width:10%;
 }
 
 .aboutButton{
   float: right;
-  width: 10%;
 }
 
 #logoImage{
@@ -78,12 +80,14 @@ img{
 }
 
 #JPicon{
-  min-height:25px;
+  height:100%;
+  min-height:20px;
   max-height:40px;
 }
 
 #instaLogo{
-  min-height:25px;
+  height:100%;
+  min-height:20px;
   max-height:40px;
 }
 
