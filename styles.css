@@ -62,8 +62,13 @@ img{
   width: 80%;
 }
 
+.instaButton{
+  float: right;
+  width:10%;
+}
+
 .aboutButton{
-  right:0px;
+  float: right;
   width: 10%;
 }
 
@@ -73,6 +78,11 @@ img{
 }
 
 #JPicon{
+  min-height:25px;
+  max-height:40px;
+}
+
+#instaLogo{
   min-height:25px;
   max-height:40px;
 }

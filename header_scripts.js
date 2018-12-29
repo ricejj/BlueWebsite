@@ -6,6 +6,10 @@ var windowH=window.innerHeight;
 //on load of the page
 $(document).ready(function(){
 
+  var logoH = $("#logoImage").height();
+  $("#JPicon").height(logoH);
+  $("instaLogo").height(logoH);
+  console.log("ok");
   //Adding the header with the logo
   /*var logoImageH = 0.1*windowH;
   $("#myHeader").height(logoImageH);
