@@ -1,0 +1,189 @@
+html, body {
+
+}
+
+body{
+  height: 100%;
+  margin-left:3vh;
+  margin-right:3vh;
+}
+
+img{
+  /*preventing the drag and drop*/
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+   user-drag: none;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content{
+
+}
+
+/*header-related classes*/
+.header {
+
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/*.sticky + .content {
+  padding-top: 102px;
+}*/
+
+.header{
+  display: inline-block;
+  width: 100%;
+  height: 10%;
+  margin-top: 0.3%;
+}
+
+#myHeader>a{
+
+}
+
+/*#myHeader>a>img{
+  min-height:30px;
+  max-height:50px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+.logoButton{
+  float: left;
+  height: 100%;
+}
+
+.instaButton{
+  float: right;
+}
+
+.aboutButton{
+  float: right;
+}
+
+#logoImage{
+  min-height:30px;
+  max-height:50px;
+}
+
+#JPicon{
+  height:100%;
+  min-height:20px;
+  max-height:40px;
+}
+
+#instaLogo{
+  height:100%;
+  min-height:20px;
+  max-height:40px;
+}
+
+/*Classes related to the gallery display (a CSS grid)*/
+.gallery{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cell{
+  padding: 10px;
+
+/*to view the cells, uncomment the end of this class*/
+  /*border-style: solid;
+  border-color: coral;
+  border-width: thick;*/
+}
+
+.pictureStyle{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 5px 15px #aaaaaa;
+  pointer-events: all;
+}
+
+/*Classes related to the modals*/
+/*background*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Hide the slides by default */
+.slides {
+  display: none;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.bigPictures{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

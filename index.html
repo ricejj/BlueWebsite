@@ -1,21 +1,55 @@
 
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<body>
-</br>
-</br>
-</br>
-<img src="traffic-cone.svg" style="display:block;margin-left:auto;margin-right:auto;width:20%">
-</br>
-</br>
-<center> <b> WORK IN PROGRESS </b> </center>
-</br>
-<center> <b> Coming soon... </b> </center>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="header_scripts.js"></script>
+  <script src="index_scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
 
-<!-- Content will go here -->
+<body oncontextmenu="return false;">
+  <div class="header" id="myHeader" height="10%">
+      <a href="index.html" class="logoButton" id="logoButton">
+        <img src="https://www.jayprod.com/images/constant/tji_noir.png" id="logoImage"
+               alt="the jay initiative">
+      </a>
+      <a href="https://www.instagram.com/jean_lepeudry/" class="instaButton" id="instaButton" target="_blank">
+        <img src="https://www.jayprod.com/images/constant/glyph-logo_May2016.png" id="instaLogo"
+               alt="follow me on Instagram!">
+      </a>
+      <a href="about.html" class="aboutButton" id="aboutButton">
+        <img src="https://www.jayprod.com/images/constant/question-mark.svg" id="JPicon"
+               alt="about JayProd">
+      </a>
+    </div>
+
+  <p> Here are my pictures &darr; </p>
+  <!-- the gallery is a "simple" CSS grid filled with images -->
+  <div class="gallery" id="gallery">
+
+  </div>
+
+<!-- this is where the "big_" images are displayed-->
+<!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+  <div class="modal" id="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" id="modalsList">
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+  <p> Here are my pictures &uarr; </p>
+
+  <br>
+
+  <p style="font-size:10px;">&copy; 2018 JayProd</p>
 
 </body>
 </html>
