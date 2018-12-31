@@ -39,12 +39,17 @@ const picsList = [
   "day5_btm",
   "day6_danse",
   "day7_hands",
-  "eyes_neon",
+  //"eyes_neon",
   "freedom",
   "Froum",
   "lamp",
   "paradise",
-  "-the-face-of-wisdom"
+  "-the-face-of-wisdom",
+  "_MG_9208_enter-the-gate",
+  "IMG_7706_big-wheel_a",
+  "IMG_7706_big-wheel_b",
+  "IMG_7706_big-big-wheel",
+  "IMG_7706_big-wheel"
 ];
 
 //A function to add ".jpg" at the end of a name
@@ -185,9 +190,9 @@ $(document).ready(function(){
   var galleryContent = $("#gallery").children();
   for(j = 0; j<numberOfPictures; j++){
     if(j%2==0){
-      $(galleryContent[j]).attr("data-depth","0.2");
+      $(galleryContent[j]).attr("data-depth","0.15");
     }else{
-      $(galleryContent[j]).attr("data-depth","0.25");
+      $(galleryContent[j]).attr("data-depth","0.17");
     }
   }
   //Creating the parallax instance
