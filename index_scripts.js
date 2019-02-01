@@ -55,7 +55,19 @@ const picsList = [
   "IMG_7143_and-the-magic-comes-in-light-w-cadre",
   "_MG_0451_trapped",
   "just-focus-w-cadre",
-  "snowstorm-w-cadre"
+  "snowstorm-w-cadre",
+  "watching-_-0392",
+  "rebirth-_-0447",
+  "king-of-the-ants-0413",
+  "bare-look-on-up3-_-IMG_1938",
+  "blue-look-on-up3-_-IMG_1938",
+  "red-look-on-up3-_-IMG_1938",
+  "green-look-on-up3-_-IMG_1938",
+  "IMG_2008",
+  "dansing-fumes",
+  "woman-silhouette",
+  "stairway-to-fade",
+  "ursula"
 ];
 
 //A function to add ".jpg" at the end of a name
