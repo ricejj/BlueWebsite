@@ -49,7 +49,13 @@ const picsList = [
   "IMG_7706_big-wheel_a",
   "IMG_7706_big-wheel_b",
   "IMG_7706_big-big-wheel",
-  "IMG_7706_big-wheel"
+  "IMG_7706_big-wheel",
+  "IMG_0479_happy-new-year",
+  "IMG_8050",
+  "IMG_7143_and-the-magic-comes-in-light-w-cadre",
+  "_MG_0451_trapped",
+  "just-focus-w-cadre",
+  "snowstorm-w-cadre"
 ];
 
 //A function to add ".jpg" at the end of a name
