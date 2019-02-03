@@ -67,7 +67,28 @@ const picsList = [
   "dansing-fumes",
   "woman-silhouette",
   "stairway-to-fade",
-  "ursula"
+  "ursula",
+  "konsequent",
+  "pride",
+  "IMG_7575_just-hangin",
+  "printemps-w-cadres",
+  "just-a-normal-street-in-paris",
+  "paris",
+  "aymane",
+  "filou",
+  "just-a-bridge",
+  "merry-xmas",
+  "IMG_3538_me",
+  "flowers",
+  "mondial de l'auto 2018-2775",
+  "mondial de l'auto 2018-2781",
+  "mondial de l'auto 2018-2785",
+  "mondial de l'auto 2018-2790",
+  "mondial de l'auto 2018-2792",
+  "mondial de l'auto 2018-2797",
+  "mondial de l'auto 2018-2801",
+  "mondial de l'auto 2018-2803",
+  "death-by-heat"
 ];
 
 //A function to add ".jpg" at the end of a name
