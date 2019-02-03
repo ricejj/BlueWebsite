@@ -91,6 +91,9 @@ const picsList = [
   "death-by-heat"
 ];
 
+var device_mobile=false;
+var orientation_portrait=false;
+
 //A function to add ".jpg" at the end of a name
 function jpgize(picName){
   return picName+".jpg";
@@ -113,7 +116,12 @@ function shuffle(a) {
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 {
+  device_mobile=true;
   window.alert("Sorry, JayProd hasn't optimized\nthe website for mobile devices yet...\n Working on it though!\n:-)");
+}
+
+if($(window).height() > $(window).width()) {
+  orientation_portrait=true;
 }
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
@@ -122,7 +130,11 @@ $(window).on('resize', function() {
     if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
     }else{
+      if(device_mobile==false){
         $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+      }else{
+        $(".gallery").css("grid-template-columns", "1fr 1fr");
+      }
     }
 })
 
@@ -159,9 +171,26 @@ function showSlides(n) {
 //on load of the page
 $(document).ready(function(){
 
-  //Setting up the size of the rows
-  var rowSize=0.33*windowH;
+  //Setting up the number and size of the rows
+  var rowSize;
+  if(device_mobile==true){
+    if(orientation_portrait==true){
+      $(".gallery").css("grid-template-columns", "1fr");
+      rowSize=0.27*windowH;
+    }else{
+      rowSize=0.27*windowW;
+      $(".gallery").css("grid-template-columns", "1fr 1fr");
+    }
+  }else{
+    rowSize=0.33*windowH;
+    if(orientation_portrait==true){
+      $(".gallery").css("grid-template-columns", "1fr");
+    }else{
+      $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+    }
+  }
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+
 
   //Filling the gallery with the actual pictures
   //shuffling up
