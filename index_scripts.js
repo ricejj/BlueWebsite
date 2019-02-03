@@ -283,7 +283,7 @@ $(document).ready(function(){
   var parallaxInstance = new Parallax(scene, {
     relativeInput: true,
     clipRelativeInput: true,
-    hoverOnly: true
+    hoverOnly: false
   });
 
   $(".cell").css('position','inherit');
