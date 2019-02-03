@@ -91,6 +91,10 @@ const picsList = [
   "death-by-heat"
 ];
 
+var device_mobile=false;
+var orientation_portrait=false;
+var cell_width;
+
 //A function to add ".jpg" at the end of a name
 function jpgize(picName){
   return picName+".jpg";
@@ -113,17 +117,40 @@ function shuffle(a) {
 //dealing with mobile devices
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 {
+  device_mobile=true;
   window.alert("Sorry, JayProd hasn't optimized\nthe website for mobile devices yet...\n Working on it though!\n:-)");
+}
+
+if($(window).height() > $(window).width()) {
+  orientation_portrait=true;
 }
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
 $(window).on('resize', function() {
   //alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
-    if($(window).height() > $(window).width()) {
+    /*if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
     }else{
+      if(device_mobile==false){
         $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+      }else{
+        $(".gallery").css("grid-template-columns", "1fr 1fr");
+      }
+    }*/
+    if($(window).width()>=3*cell_width){
+      $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+      console.log("ok pour 3");
+    }else{
+      if ($(window).width()<2*cell_width) {
+        $(".gallery").css("grid-template-columns", "1fr");
+        console.log("ok pour 1");
+      }else{
+        $(".gallery").css("grid-template-columns", "1fr 1fr");
+        console.log("ok pour 2");
+      }
     }
+    $(".bigPictures").css("width", "auto");
+    $(".bigPictures").css("height", "auto");
 })
 
 //Functions for modals
@@ -159,9 +186,26 @@ function showSlides(n) {
 //on load of the page
 $(document).ready(function(){
 
-  //Setting up the size of the rows
-  var rowSize=0.33*windowH;
+  //Setting up the number and size of the rows
+  var rowSize;
+  if(device_mobile==true){
+    if(orientation_portrait==true){
+      $(".gallery").css("grid-template-columns", "1fr");
+      rowSize=0.27*windowH;
+    }else{
+      rowSize=0.27*windowW;
+      $(".gallery").css("grid-template-columns", "1fr 1fr");
+    }
+  }else{
+    rowSize=0.33*windowH;
+    if(orientation_portrait==true){
+      $(".gallery").css("grid-template-columns", "1fr");
+    }else{
+      $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+    }
+  }
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
+
 
   //Filling the gallery with the actual pictures
   //shuffling up
@@ -211,7 +255,8 @@ $(document).ready(function(){
   showSlides(slideIndex);
 
   //Resizing the images in the cells
-  var cell_width=$(".cell").width();
+  //cell_width is a global variable
+  cell_width=$(".cell").width();
   var cell_height=$(".cell").height();
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
@@ -238,7 +283,7 @@ $(document).ready(function(){
   var parallaxInstance = new Parallax(scene, {
     relativeInput: true,
     clipRelativeInput: true,
-    hoverOnly: true
+    hoverOnly: false
   });
 
   $(".cell").css('position','inherit');
