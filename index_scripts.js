@@ -93,6 +93,7 @@ const picsList = [
 
 var device_mobile=false;
 var orientation_portrait=false;
+var cell_width;
 
 //A function to add ".jpg" at the end of a name
 function jpgize(picName){
@@ -136,11 +137,11 @@ $(window).on('resize', function() {
         $(".gallery").css("grid-template-columns", "1fr 1fr");
       }
     }*/
-    if($(window).width()>=3.3*$(".pictureStyle").width()){
+    if($(window).width()>=3*cell_width){
       $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
       console.log("ok pour 3");
     }else{
-      if ($(window).width()<2.2*$(".pictureStyle").width()) {
+      if ($(window).width()<2*cell_width) {
         $(".gallery").css("grid-template-columns", "1fr");
         console.log("ok pour 1");
       }else{
@@ -148,6 +149,8 @@ $(window).on('resize', function() {
         console.log("ok pour 2");
       }
     }
+    $(".bigPictures").css("width", "auto");
+    $(".bigPictures").css("height", "auto");
 })
 
 //Functions for modals
@@ -252,7 +255,8 @@ $(document).ready(function(){
   showSlides(slideIndex);
 
   //Resizing the images in the cells
-  var cell_width=$(".cell").width();
+  //cell_width is a global variable
+  cell_width=$(".cell").width();
   var cell_height=$(".cell").height();
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
