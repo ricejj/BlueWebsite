@@ -127,13 +127,25 @@ if($(window).height() > $(window).width()) {
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
 $(window).on('resize', function() {
   //alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
-    if($(window).height() > $(window).width()) {
+    /*if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
     }else{
       if(device_mobile==false){
         $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
       }else{
         $(".gallery").css("grid-template-columns", "1fr 1fr");
+      }
+    }*/
+    if($(window).width()>=3.3*$(".pictureStyle").width()){
+      $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
+      console.log("ok pour 3");
+    }else{
+      if ($(window).width()<2.2*$(".pictureStyle").width()) {
+        $(".gallery").css("grid-template-columns", "1fr");
+        console.log("ok pour 1");
+      }else{
+        $(".gallery").css("grid-template-columns", "1fr 1fr");
+        console.log("ok pour 2");
       }
     }
 })
