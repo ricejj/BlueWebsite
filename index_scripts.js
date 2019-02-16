@@ -111,10 +111,10 @@ const picsList = [
   "exhibition",
   "the-face-of-wisdom",
   "bee-on-a-sunflower-_-IMG_4379",
-  "somewhat of a symetry IMG_3201",
+  "somewhat-of-a-symetry-IMG_3201",
   "I-see-fire_white",
   "reflection",
-  "cloudtal-_-IMG_0109"
+  //"cloudtal-_-IMG_0109"
 ];
 
 var device_mobile=false;
