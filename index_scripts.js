@@ -114,6 +114,9 @@ const picsList = [
   "somewhat-of-a-symetry-IMG_3201",
   "I-see-fire_white",
   "reflection",
+  "IMG_8463-cadre",
+  "IMG_8542-cadre",
+  "IMG_8586-cadre"
   //"cloudtal-_-IMG_0109"
 ];
 
