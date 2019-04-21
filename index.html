@@ -9,7 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="header_scripts.js"></script>
   <script src="index_scripts.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css" />
+
 </head>
 
 <body oncontextmenu="return false;">
@@ -28,6 +31,58 @@
       </a>
     </div>
 
+    <div class="wrapper" id="modal_disclaimer">
+      <div class="disclaimer">
+        <div class="header-disclaimer">
+          <span id="cookiesClose" class="closeCursor" onclick="closeModal()">&times;</span>
+
+        </div>
+        <div class="body-disclaimer">
+          <h1 class="title" style="margin:0">Do you like cookies?</h1>
+          <br>
+          <img src="https://www.jayprod.com/images/constant/cookies.svg" width="10%" alt="">
+          <p>Because we do!</p>
+          <p>Cookies are little pieces of information that your browser gives us
+            when you visit a website. Having access to this enables us to see
+            which features are being used and how: this way we can make updates
+            that really make sense.</p>
+          <p>And don't worry, it's nothing personal, it's all anonymous ;)</p>
+          <p>
+            <a class="cookiesMoreLink" href="cookies.html">More about this here</a>
+          </p>
+          <a type="button" style="-webkit-appearance:none" class="button normalText" id="accept_term">
+            I'm fine with that
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+        var acceptTerm = document.getElementById('accept_term');
+        acceptTerm.onclick = function() {
+            $.get("/wp-content/themes/engiedigital/utils/ajax-accepte-disclamer.php");
+            setTimeout(stopChromeDiclaimer, 1000);
+        };
+
+        function stopChromeDiclaimer() {
+            modalTerm.style.display = "none";
+            window.location.reload();
+        }
+
+        var modalTerm = document.getElementById('modal_disclaimer');
+
+        var span = document.getElementById("close-disclaimer");
+        modalTerm.style.display = "block";
+        span.onclick = function() {
+            modalTerm.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modalTerm) {
+                modalTerm.style.display = "none";
+            }
+        }
+    </script>
+
   <p> Here are my pictures &darr; </p>
   <!-- the gallery is a "simple" CSS grid filled with images -->
   <div class="gallery" id="gallery">
@@ -37,7 +92,7 @@
 <!-- this is where the "big_" images are displayed-->
 <!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
   <div class="modal" id="modal">
-    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <span class="closeCursor" onclick="closeModal()">&times;</span>
     <div class="modal-content" id="modalsList">
       <!-- Next/previous controls -->
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
