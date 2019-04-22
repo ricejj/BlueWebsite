@@ -31,6 +31,10 @@
       </a>
     </div>
 
+
+    <!-- here is Cookies agreement popup (a priori no need for that,
+    cf https://www.blastam.com/blog/gdpr-need-consent-for-google-analytics-tracking)-->
+    <!--
     <div class="wrapper" id="modal_disclaimer">
       <div class="disclaimer">
         <div class="header-disclaimer">
@@ -56,32 +60,8 @@
         </div>
       </div>
     </div>
-    <script>
-        /*var acceptTerm = document.getElementById('accept_term');
-        acceptTerm.onclick = function() {
-            $.get("/wp-content/themes/engiedigital/utils/ajax-accepte-disclamer.php");
-            setTimeout(stopChromeDiclaimer, 1000);
-        };
+    -->
 
-        function stopChromeDiclaimer() {
-            modalTerm.style.display = "none";
-            window.location.reload();
-        }*/
-
-        var modalTerm = document.getElementById('modal_disclaimer');
-
-        var span = document.getElementById("close-disclaimer");
-        //modalTerm.style.display = "block";
-        span.onclick = function() {
-            modalTerm.style.display = "none";
-        };
-
-        window.onclick = function(event) {
-            if (event.target == modalTerm) {
-                modalTerm.style.display = "none";
-            }
-        }
-    </script>
 
   <p> Here are my pictures &darr; </p>
   <!-- the gallery is a "simple" CSS grid filled with images -->
