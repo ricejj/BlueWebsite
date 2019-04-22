@@ -34,11 +34,11 @@
     <div class="wrapper" id="modal_disclaimer">
       <div class="disclaimer">
         <div class="header-disclaimer">
-          <span id="cookiesClose" class="closeCursor" onclick="closeModal()">&times;</span>
+          <span id="cookiesClose" class="closeCursor" onclick="closeModal('modal_disclaimer')">&times;</span>
 
         </div>
         <div class="body-disclaimer">
-          <h1 class="title" style="margin:0">Do you like cookies?</h1>
+          <h3 class="title" style="margin:0">Do you like cookies?</h3>
           <br>
           <img src="https://www.jayprod.com/images/constant/cookies.svg" width="10%" alt="">
           <p>Because we do!</p>
@@ -50,14 +50,14 @@
           <p>
             <a class="cookiesMoreLink" href="cookies.html">More about this here</a>
           </p>
-          <a type="button" style="-webkit-appearance:none" class="button normalText" id="accept_term">
+          <a type="button" onclick="closeModal('modal_disclaimer')" style="-webkit-appearance:none" class="button normalText" id="cookiesAccept">
             I'm fine with that
           </a>
         </div>
       </div>
     </div>
     <script>
-        var acceptTerm = document.getElementById('accept_term');
+        /*var acceptTerm = document.getElementById('accept_term');
         acceptTerm.onclick = function() {
             $.get("/wp-content/themes/engiedigital/utils/ajax-accepte-disclamer.php");
             setTimeout(stopChromeDiclaimer, 1000);
@@ -66,12 +66,12 @@
         function stopChromeDiclaimer() {
             modalTerm.style.display = "none";
             window.location.reload();
-        }
+        }*/
 
         var modalTerm = document.getElementById('modal_disclaimer');
 
         var span = document.getElementById("close-disclaimer");
-        modalTerm.style.display = "block";
+        //modalTerm.style.display = "block";
         span.onclick = function() {
             modalTerm.style.display = "none";
         };
@@ -92,7 +92,7 @@
 <!-- this is where the "big_" images are displayed-->
 <!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
   <div class="modal" id="modal">
-    <span class="closeCursor" onclick="closeModal()">&times;</span>
+    <span class="closeCursor" onclick="closeModal('modal')">&times;</span>
     <div class="modal-content" id="modalsList">
       <!-- Next/previous controls -->
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

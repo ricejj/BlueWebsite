@@ -188,8 +188,8 @@ function openModal() {
   document.getElementById('modal').style.display = "block";
 }
 // Close the Modal
-function closeModal() {
-  document.getElementById('modal').style.display = "none";
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
 }
 // Next/previous controls
 function plusSlides(n) {
