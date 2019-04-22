@@ -1,90 +1,111 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-  <script src="header_scripts.js"></script>
-  <script src="index_scripts.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135910611-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-135910611-1');
+      </script>
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KTFWB5M');</script>
+      <!-- End Google Tag Manager -->
 
-</head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+      <script src="header_scripts.js"></script>
+      <script src="index_scripts.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="styles.css" />
 
-<body oncontextmenu="return false;">
-  <div class="header" id="myHeader" height="10%">
-      <a href="index.html" class="logoButton" id="logoButton">
-        <img src="https://www.jayprod.com/images/constant/tji_noir.png" id="logoImage"
-               alt="the jay initiative">
-      </a>
-      <a href="https://www.instagram.com/jean_lepeudry/" class="instaButton" id="instaButton" target="_blank">
-        <img src="https://www.jayprod.com/images/constant/glyph-logo_May2016.png" id="instaLogo"
-               alt="follow me on Instagram!">
-      </a>
-      <a href="about.html" class="aboutButton" id="aboutButton">
-        <img src="https://www.jayprod.com/images/constant/question-mark.svg" id="JPicon"
-               alt="about JayProd">
-      </a>
-    </div>
+    </head>
+
+    <body oncontextmenu="return false;">
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTFWB5M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+      <div class="header" id="myHeader" height="10%">
+        <a href="index.html" class="logoButton" id="logoButton">
+          <img src="https://www.jayprod.com/images/constant/tji_noir.png" id="logoImage"
+              alt="the jay initiative">
+            </a>
+            <a href="https://www.instagram.com/jean_lepeudry/" class="instaButton" id="instaButton" target="_blank">
+              <img src="https://www.jayprod.com/images/constant/glyph-logo_May2016.png" id="instaLogo"
+              alt="follow me on Instagram!">
+            </a>
+            <a href="about.html" class="aboutButton" id="aboutButton">
+              <img src="https://www.jayprod.com/images/constant/question-mark.svg" id="JPicon"
+              alt="about JayProd">
+            </a>
+          </div>
 
 
-    <!-- here is Cookies agreement popup (a priori no need for that,
-    cf https://www.blastam.com/blog/gdpr-need-consent-for-google-analytics-tracking)-->
-    <!--
-    <div class="wrapper" id="modal_disclaimer">
-      <div class="disclaimer">
-        <div class="header-disclaimer">
-          <span id="cookiesClose" class="closeCursor" onclick="closeModal('modal_disclaimer')">&times;</span>
+          <!-- here is Cookies agreement popup (a priori no need for that,
+          cf https://www.blastam.com/blog/gdpr-need-consent-for-google-analytics-tracking)-->
+          <!--
+          <div class="wrapper" id="modal_disclaimer">
+          <div class="disclaimer">
+          <div class="header-disclaimer">
+            <span id="cookiesClose" class="closeCursor" onclick="closeModal('modal_disclaimer')">&times;</span>
 
-        </div>
-        <div class="body-disclaimer">
-          <h3 class="title" style="margin:0">Do you like cookies?</h3>
-          <br>
-          <img src="https://www.jayprod.com/images/constant/cookies.svg" width="10%" alt="">
-          <p>Because we do!</p>
-          <p>Cookies are little pieces of information that your browser gives us
-            when you visit a website. Having access to this enables us to see
-            which features are being used and how: this way we can make updates
-            that really make sense.</p>
-          <p>And don't worry, it's nothing personal, it's all anonymous ;)</p>
-          <p>
-            <a class="cookiesMoreLink" href="cookies.html">More about this here</a>
-          </p>
-          <a type="button" onclick="closeModal('modal_disclaimer')" style="-webkit-appearance:none" class="button normalText" id="cookiesAccept">
-            I'm fine with that
-          </a>
+          </div>
+          <div class="body-disclaimer">
+            <h3 class="title" style="margin:0">Do you like cookies?</h3>
+            <br>
+            <img src="https://www.jayprod.com/images/constant/cookies.svg" width="10%" alt="">
+            <p>Because we do!</p>
+            <p>Cookies are little pieces of information that your browser gives us
+              when you visit a website. Having access to this enables us to see
+              which features are being used and how: this way we can make updates
+              that really make sense.</p>
+              <p>And don't worry, it's nothing personal, it's all anonymous ;)</p>
+              <p>
+              <a class="cookiesMoreLink" href="cookies.html">More about this here</a>
+            </p>
+            <a type="button" onclick="closeModal('modal_disclaimer')" style="-webkit-appearance:none" class="button normalText" id="cookiesAccept">
+              I'm fine with that
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    -->
+      -->
 
 
-  <p> Here are my pictures &darr; </p>
-  <!-- the gallery is a "simple" CSS grid filled with images -->
-  <div class="gallery" id="gallery">
+      <p> Here are my pictures &darr; </p>
+      <!-- the gallery is a "simple" CSS grid filled with images -->
+      <div class="gallery" id="gallery">
 
-  </div>
+      </div>
 
-<!-- this is where the "big_" images are displayed-->
-<!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
-  <div class="modal" id="modal">
-    <span class="closeCursor" onclick="closeModal('modal')">&times;</span>
-    <div class="modal-content" id="modalsList">
-      <!-- Next/previous controls -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </div>
+      <!-- this is where the "big_" images are displayed-->
+      <!-- cf https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+      <div class="modal" id="modal">
+        <span class="closeCursor" onclick="closeModal('modal')">&times;</span>
+        <div class="modal-content" id="modalsList">
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
 
-  <p> Here are my pictures &uarr; </p>
+      <p> Here are my pictures &uarr; </p>
 
-  <br>
+      <br>
 
-  <p style="font-size:10px;">All rights reserved &copy; 2018 JayProd</p>
+      <p style="font-size:10px;">All rights reserved &copy; 2018 JayProd</p>
 
-</body>
+  </body>
 </html>
