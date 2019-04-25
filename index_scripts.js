@@ -245,7 +245,6 @@ $(document).ready(function(){
   shuffle(shuffledPicsList);
 
 
-
   //Setting up the size of the gap between the grid elements
   $(".gallery").css("grid-gap","20px");
 
@@ -296,24 +295,26 @@ $(document).ready(function(){
   var modal_height=$("#modal").height();
   $(".bigPictures").css({"max-width":0.9*modal_width,"max-height":0.9*modal_height});
 
-  //SETTING UP THE PARALLAX EFFECT
-  var scene = $('#gallery').get(0);
-  //getting an alternating data-depth every other picture
-  var j;
-  var galleryContent = $("#gallery").children();
-  for(j = 0; j<numberOfPictures; j++){
-    if(j%2==0){
-      $(galleryContent[j]).attr("data-depth","0.15");
-    }else{
-      $(galleryContent[j]).attr("data-depth","0.17");
+  //SETTING UP THE PARALLAX EFFECT, only on Desktops
+  if(device_mobile==false){
+    var scene = $('#gallery').get(0);
+    //getting an alternating data-depth every other picture
+    var j;
+    var galleryContent = $("#gallery").children();
+    for(j = 0; j<numberOfPictures; j++){
+      if(j%2==0){
+        $(galleryContent[j]).attr("data-depth","0.15");
+      }else{
+        $(galleryContent[j]).attr("data-depth","0.17");
+      }
     }
+    //Creating the parallax instance
+    var parallaxInstance = new Parallax(scene, {
+      relativeInput: true,
+      clipRelativeInput: true,
+      hoverOnly: false
+    });
   }
-  //Creating the parallax instance
-  var parallaxInstance = new Parallax(scene, {
-    relativeInput: true,
-    clipRelativeInput: true,
-    hoverOnly: false
-  });
 
   $(".cell").css('position','inherit');
 
