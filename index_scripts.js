@@ -255,8 +255,8 @@ $(document).ready(function(){
   $(".gallery").css("grid-gap","20px");
 
   // Filling the gallery
-  var numberOfPictures = shuffledPicsList.length;
-  for (var i=1; i<=numberOfPictures; i++){
+  var numberOfPictures = shuffledPicsList.length+3;
+  for (var i=4; i<=numberOfPictures; i++){
     console.log(i);
     //adding the pic to the gallery
     var div = jQuery('<div/>', {
