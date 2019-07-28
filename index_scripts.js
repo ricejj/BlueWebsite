@@ -116,8 +116,14 @@ const picsList = [
   "reflection",
   "IMG_8463-cadre",
   "IMG_8542-cadre",
-  "IMG_8586-cadre"
-  //"cloudtal-_-IMG_0109"
+  "IMG_8586-cadre",
+  //"cloudtal-_-IMG_0109",
+  "among-the-fishes_IMG_8764_cadre",
+  "another-trinity_whole",
+  "photographe_MG_0408"
+  /*"cadre-casual-crosswords-IMG_0308",
+  "cadre-des-fleurs-sur-la-ville-IMG_0304",
+  "cadre-holding-paris-IMG_0335"*/
 ];
 
 var device_mobile=false;
