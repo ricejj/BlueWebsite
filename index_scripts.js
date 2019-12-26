@@ -120,7 +120,8 @@ const picsList = [
   //"cloudtal-_-IMG_0109",
   "among-the-fishes_IMG_8764_cadre",
   "another-trinity_whole",
-  "photographe_MG_0408"
+  "photographe_MG_0408",
+  "eyes of nature _ warm sunset in la selle _ IMG_3079"
   /*"cadre-casual-crosswords-IMG_0308",
   "cadre-des-fleurs-sur-la-ville-IMG_0304",
   "cadre-holding-paris-IMG_0335"*/
