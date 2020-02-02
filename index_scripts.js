@@ -303,7 +303,7 @@ $(document).ready(function(){
   $(".bigPictures").css({"max-width":0.9*modal_width,"max-height":0.9*modal_height});
 
   //SETTING UP THE PARALLAX EFFECT, only on Desktops
-  if(device_mobile==false){
+  /*if(device_mobile==false){
     var scene = $('#gallery').get(0);
     //getting an alternating data-depth every other picture
     var j;
@@ -321,7 +321,7 @@ $(document).ready(function(){
       clipRelativeInput: true,
       hoverOnly: false
     });
-  }
+  }*/
 
   $(".cell").css('position','inherit');
 
