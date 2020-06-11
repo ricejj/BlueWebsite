@@ -323,7 +323,7 @@ $(document).ready(function(){
     });
   }*/
 
-  $(".cell").css('position','inherit');
+  //$(".cell").css('position','inherit');
 
 
 });

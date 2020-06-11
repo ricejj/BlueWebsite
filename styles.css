@@ -4,8 +4,6 @@ html, body {
 
 body{
   height: 100%;
-  margin-left:3vh;
-  margin-right:3vh;
 }
 
 .title{
@@ -196,6 +194,8 @@ img{
 /*Classes related to the gallery display (a CSS grid)*/
 .gallery{
   display: grid;
+  margin-left:3vh;
+  margin-right:3vh;
 }
 
 /* in the end this in done in Jquery*/
@@ -242,8 +242,27 @@ img{
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.95)
 }
+.modal_video{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95)
+}
 /* Modal Content */
 .modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+.modal_video-content{
   position: relative;
   margin: auto;
   padding: 0;
