@@ -4,8 +4,6 @@ html, body {
 
 body{
   height: 100%;
-  margin-left:3vh;
-  margin-right:3vh;
 }
 
 .title{
@@ -196,6 +194,8 @@ img{
 /*Classes related to the gallery display (a CSS grid)*/
 .gallery{
   display: grid;
+  margin-left:3vh;
+  margin-right:3vh;
 }
 
 /* in the end this in done in Jquery*/
