@@ -257,22 +257,33 @@ $(document).ready(function(){
 
 
   //Setting up the new gallery, it's just a list of img
+  var numberOfPictures = shuffledPicsList.length;
+  var gal="";
+  var modals="";
+  for (var i=1; i<=numberOfPictures; i++){
+    gal += '<img id='
+    +'picture'+i
+    +' onclick='+'openModal();currentSlide('+i+')'
+    +' src='+genUrl(shuffledPicsList[i-1],'tmb')
+    +' alt='+shuffledPicsList[i-1]
+    +'/>';
+    modals += '<div id=slide'+i
+    +' class=slides>'
+    +'<img id=big_image'+i
+    +' class=bigPictures'
+    +' src='+genUrl(shuffledPicsList[i-1],'big')+' '
+    +'/>'
+    +'</div>'
+  }
+  $('#gallery').append(gal);
+  $('#modalsList').append(modals);
+
+  //adding the modals
 
 
   //Setting up the size of the gap between the grid elements
   /*$(".gallery").css("grid-gap","20px");*/
-  var numberOfPictures = shuffledPicsList.length;
-  var gal="";
-  for (var i=1; i<=numberOfPictures; i++){
-    gal += '<img id='
-    +'picture'+i
-    +' class=xx onclick='+'openModal();currentSlide('+i+')'
-    +' src='+genUrl(shuffledPicsList[i-1],'tmb')
-    +' alt='+shuffledPicsList[i-1]
-    +'/>';
-  }
-  //$('#gallery').append(gal);
-  $('#gallery').append(gal);
+
   // Filling the gallery
   /*var numberOfPictures = shuffledPicsList.length+3;
   for (var i=4; i<=numberOfPictures; i++){

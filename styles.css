@@ -198,6 +198,41 @@ img{
   margin-right:3vh;
 }
 
+/*this comes from https://css-tricks.com/seamless-responsive-photo-grid/*/
+.gallery {
+  /* Prevent vertical gaps */
+  line-height: 3;
+
+  -webkit-column-count: 3;
+  -webkit-column-gap:   1vw;
+  -moz-column-count:    3;
+  -moz-column-gap:      1vw;
+  column-count:         3;
+  column-gap:           1vw;
+}
+
+.gallery img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1000px) {
+  .gallery {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 800px) {
+  .gallery {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+
 /* in the end this in done in Jquery*/
 /*@media all and (orientation: portrait) {
   .gallery{
