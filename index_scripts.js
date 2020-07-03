@@ -136,6 +136,10 @@ function jpgize(picName){
   return picName+".jpg";
 }
 
+function genUrl(name,type){
+  return "https://www.jayprod.com/images/gallery/"+type+"_"+name+".jpg";
+}
+
 //Function to shuffle the elements of a list
 // cf https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
 function shuffle(a) {
@@ -252,9 +256,23 @@ $(document).ready(function(){
   shuffle(shuffledPicsList);
 
 
+  //Setting up the new gallery, it's just a list of img
+
+
   //Setting up the size of the gap between the grid elements
   /*$(".gallery").css("grid-gap","20px");*/
-
+  var numberOfPictures = shuffledPicsList.length;
+  var gal="";
+  for (var i=1; i<=numberOfPictures; i++){
+    gal += '<img id='
+    +'picture'+i
+    +' class=xx onclick='+'openModal();currentSlide('+i+')'
+    +' src='+genUrl(shuffledPicsList[i-1],'tmb')
+    +' alt='+shuffledPicsList[i-1]
+    +'/>';
+  }
+  //$('#gallery').append(gal);
+  $('#gallery').append(gal);
   // Filling the gallery
   /*var numberOfPictures = shuffledPicsList.length+3;
   for (var i=4; i<=numberOfPictures; i++){
