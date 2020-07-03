@@ -223,7 +223,7 @@ function showSlides(n) {
 $(document).ready(function(){
 
   //Setting up the number and size of the rows
-  var rowSize;
+  /*var rowSize;
   if(device_mobile==true){
     if(orientation_portrait==true){
       $(".gallery").css("grid-template-columns", "1fr");
@@ -241,7 +241,7 @@ $(document).ready(function(){
     }
   }
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
-
+*/
 
   //Filling the gallery with the actual pictures
   //shuffling up
@@ -253,10 +253,10 @@ $(document).ready(function(){
 
 
   //Setting up the size of the gap between the grid elements
-  $(".gallery").css("grid-gap","20px");
+  /*$(".gallery").css("grid-gap","20px");*/
 
   // Filling the gallery
-  var numberOfPictures = shuffledPicsList.length+3;
+  /*var numberOfPictures = shuffledPicsList.length+3;
   for (var i=4; i<=numberOfPictures; i++){
     console.log(i);
     //adding the pic to the gallery
@@ -284,19 +284,19 @@ $(document).ready(function(){
       src:n,
     }));
     div2.appendTo('#modalsList');
-  }
+  }*/
   //showing the slides
   slideIndex = 1;
   showSlides(slideIndex);
 
   //Resizing the images in the cells
   //cell_width is a global variable
-  cell_width=$(".cell").width();
+/*  cell_width=$(".cell").width();
   var cell_height=$(".cell").height();
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
-
+*/
   //Resizing the images in the modals
   var modal_width=$("#modal").width();
   var modal_height=$("#modal").height();
