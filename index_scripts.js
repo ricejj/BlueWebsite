@@ -264,14 +264,14 @@ $(document).ready(function(){
     gal += '<img id='
     +'picture'+i
     +' onclick='+'openModal();currentSlide('+i+')'
-    +' src='+genUrl(shuffledPicsList[i-1],'tmb')
+    +' src='+genUrl(encodeURIComponent(shuffledPicsList[i-1]),'tmb')
     +' alt='+shuffledPicsList[i-1]
     +'/>';
     modals += '<div id=slide'+i
     +' class=slides>'
     +'<img id=big_image'+i
     +' class=bigPictures'
-    +' src='+genUrl(shuffledPicsList[i-1],'big')+' '
+    +' src='+genUrl(encodeURIComponent(shuffledPicsList[i-1]),'big')+' '
     +'/>'
     +'</div>'
   }
