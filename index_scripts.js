@@ -136,6 +136,10 @@ function jpgize(picName){
   return picName+".jpg";
 }
 
+function genUrl(name,type){
+  return "https://www.jayprod.com/images/gallery/"+type+"_"+name+".jpg";
+}
+
 //Function to shuffle the elements of a list
 // cf https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
 function shuffle(a) {
@@ -162,7 +166,7 @@ if($(window).height() > $(window).width()) {
 }
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
-$(window).on('resize', function() {
+/*$(window).on('resize', function() {*/
   //alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
     /*if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
@@ -173,7 +177,7 @@ $(window).on('resize', function() {
         $(".gallery").css("grid-template-columns", "1fr 1fr");
       }
     }*/
-    if($(window).width()>=3*cell_width){
+/*    if($(window).width()>=3*cell_width){
       $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
       console.log("ok pour 3");
     }else{
@@ -187,7 +191,7 @@ $(window).on('resize', function() {
     }
     $(".bigPictures").css("width", "auto");
     $(".bigPictures").css("height", "auto");
-})
+})*/
 
 //Functions for modals
 // Open the Modal
@@ -223,7 +227,7 @@ function showSlides(n) {
 $(document).ready(function(){
 
   //Setting up the number and size of the rows
-  var rowSize;
+  /*var rowSize;
   if(device_mobile==true){
     if(orientation_portrait==true){
       $(".gallery").css("grid-template-columns", "1fr");
@@ -241,7 +245,7 @@ $(document).ready(function(){
     }
   }
   $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
-
+*/
 
   //Filling the gallery with the actual pictures
   //shuffling up
@@ -252,11 +256,36 @@ $(document).ready(function(){
   shuffle(shuffledPicsList);
 
 
+  //Setting up the new gallery, it's just a list of img
+  var numberOfPictures = shuffledPicsList.length;
+  var gal="";
+  var modals="";
+  for (var i=1; i<=numberOfPictures; i++){
+    gal += '<img id='
+    +'picture'+i
+    +' onclick='+'openModal();currentSlide('+i+')'
+    +' src='+genUrl(encodeURIComponent(shuffledPicsList[i-1]),'tmb')
+    +' alt='+shuffledPicsList[i-1]
+    +'/>';
+    modals += '<div id=slide'+i
+    +' class=slides>'
+    +'<img id=big_image'+i
+    +' class=bigPictures'
+    +' src='+genUrl(encodeURIComponent(shuffledPicsList[i-1]),'big')+' '
+    +'/>'
+    +'</div>'
+  }
+  $('#gallery').append(gal);
+  $('#modalsList').append(modals);
+
+  //adding the modals
+
+
   //Setting up the size of the gap between the grid elements
-  $(".gallery").css("grid-gap","20px");
+  /*$(".gallery").css("grid-gap","20px");*/
 
   // Filling the gallery
-  var numberOfPictures = shuffledPicsList.length+3;
+  /*var numberOfPictures = shuffledPicsList.length+3;
   for (var i=4; i<=numberOfPictures; i++){
     console.log(i);
     //adding the pic to the gallery
@@ -284,19 +313,19 @@ $(document).ready(function(){
       src:n,
     }));
     div2.appendTo('#modalsList');
-  }
+  }*/
   //showing the slides
   slideIndex = 1;
   showSlides(slideIndex);
 
   //Resizing the images in the cells
   //cell_width is a global variable
-  cell_width=$(".cell").width();
+/*  cell_width=$(".cell").width();
   var cell_height=$(".cell").height();
   $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
   $(".pictureStyle").css('diplay','block');
   $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
-
+*/
   //Resizing the images in the modals
   var modal_width=$("#modal").width();
   var modal_height=$("#modal").height();
