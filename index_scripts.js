@@ -162,7 +162,7 @@ if($(window).height() > $(window).width()) {
 }
 
 //dealing with resizing the window (or lanscape <-> portrait on mobile)
-$(window).on('resize', function() {
+/*$(window).on('resize', function() {*/
   //alert("Noooooo\nDon't toy with me, please!\n:'(\nReload the page when you're done\nplaying with the window size...")
     /*if($(window).height() > $(window).width()) {
         $(".gallery").css("grid-template-columns", "1fr");
@@ -173,7 +173,7 @@ $(window).on('resize', function() {
         $(".gallery").css("grid-template-columns", "1fr 1fr");
       }
     }*/
-    if($(window).width()>=3*cell_width){
+/*    if($(window).width()>=3*cell_width){
       $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
       console.log("ok pour 3");
     }else{
@@ -187,7 +187,7 @@ $(window).on('resize', function() {
     }
     $(".bigPictures").css("width", "auto");
     $(".bigPictures").css("height", "auto");
-})
+})*/
 
 //Functions for modals
 // Open the Modal
