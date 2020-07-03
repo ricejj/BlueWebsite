@@ -25,13 +25,13 @@ img{
    user-drag: none;
 }
 
-.center {
+.OLDcenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.content{
+.OLDcontent{
 
 }
 
@@ -192,7 +192,7 @@ img{
 */
 
 /*Classes related to the gallery display (a CSS grid)*/
-.gallery{
+.OLDgallery{
   display: grid;
   margin-left:3vh;
   margin-right:3vh;
@@ -211,7 +211,7 @@ img{
   }
 }*/
 
-.cell{
+.OLDcell{
   padding: 10px;
 
 /*to view the cells, uncomment the end of this class*/
@@ -220,7 +220,7 @@ img{
   border-width: thick;*/
 }
 
-.pictureStyle{
+.OLDpictureStyle{
   display:block;
   margin-left: auto;
   margin-right: auto;
