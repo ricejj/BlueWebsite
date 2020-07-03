@@ -226,27 +226,6 @@ function showSlides(n) {
 //on load of the page
 $(document).ready(function(){
 
-  //Setting up the number and size of the rows
-  /*var rowSize;
-  if(device_mobile==true){
-    if(orientation_portrait==true){
-      $(".gallery").css("grid-template-columns", "1fr");
-      rowSize=0.27*windowH;
-    }else{
-      rowSize=0.27*windowW;
-      $(".gallery").css("grid-template-columns", "1fr 1fr");
-    }
-  }else{
-    rowSize=0.33*windowH;
-    if(orientation_portrait==true){
-      $(".gallery").css("grid-template-columns", "1fr");
-    }else{
-      $(".gallery").css("grid-template-columns", "1fr 1fr 1fr");
-    }
-  }
-  $(".gallery").css({"grid-template-rows":rowSize,"grid-auto-rows":rowSize});
-*/
-
   //Filling the gallery with the actual pictures
   //shuffling up
   var shuffledPicsList = new Array(picsList.length).fill('0');
@@ -260,7 +239,7 @@ $(document).ready(function(){
   var numberOfPictures = shuffledPicsList.length;
   var gal="";
   var modals="";
-  for (var i=1; i<=numberOfPictures; i++){
+  for (var i=4; i<=numberOfPictures+3; i++){
     gal += '<img id='
     +'picture'+i
     +' onclick='+'openModal();currentSlide('+i+')'
@@ -278,81 +257,13 @@ $(document).ready(function(){
   $('#gallery').append(gal);
   $('#modalsList').append(modals);
 
-  //adding the modals
-
-
-  //Setting up the size of the gap between the grid elements
-  /*$(".gallery").css("grid-gap","20px");*/
-
-  // Filling the gallery
-  /*var numberOfPictures = shuffledPicsList.length+3;
-  for (var i=4; i<=numberOfPictures; i++){
-    console.log(i);
-    //adding the pic to the gallery
-    var div = jQuery('<div/>', {
-      id: 'cell'+i,
-      class: 'cell content',
-      title:'',
-    });
-    div.append(jQuery('<img/>', {
-      id: 'image'+i,
-      class: 'pictureStyle',
-      onclick: "openModal();currentSlide("+i+")",
-      src:'https://www.jayprod.com/images/gallery/tmb_'+jpgize(shuffledPicsList[i-1]),
-    }));
-    div.appendTo('#gallery');
-    //adding the modals (pop-up with the "big_" picture)
-    var div2 = jQuery('<div/>', {
-      class: 'slides',
-      id: 'slide'+i,
-    });
-    var n='https://www.jayprod.com/images/gallery/big_'+jpgize(shuffledPicsList[i-1]);
-    div2.append(jQuery('<img/>', {
-      id: 'big_image'+i,
-      class: "bigPictures",
-      src:n,
-    }));
-    div2.appendTo('#modalsList');
-  }*/
   //showing the slides
   slideIndex = 1;
   showSlides(slideIndex);
 
-  //Resizing the images in the cells
-  //cell_width is a global variable
-/*  cell_width=$(".cell").width();
-  var cell_height=$(".cell").height();
-  $(".pictureStyle").css({"max-width":cell_width,"max-height":cell_height});
-  $(".pictureStyle").css('diplay','block');
-  $(".pictureStyle").css({'margin-left':'auto','margin-left':'auto'});
-*/
   //Resizing the images in the modals
   var modal_width=$("#modal").width();
   var modal_height=$("#modal").height();
   $(".bigPictures").css({"max-width":0.9*modal_width,"max-height":0.9*modal_height});
-
-  //SETTING UP THE PARALLAX EFFECT, only on Desktops
-  /*if(device_mobile==false){
-    var scene = $('#gallery').get(0);
-    //getting an alternating data-depth every other picture
-    var j;
-    var galleryContent = $("#gallery").children();
-    for(j = 0; j<numberOfPictures; j++){
-      if(j%2==0){
-        $(galleryContent[j]).attr("data-depth","0.15");
-      }else{
-        $(galleryContent[j]).attr("data-depth","0.17");
-      }
-    }
-    //Creating the parallax instance
-    var parallaxInstance = new Parallax(scene, {
-      relativeInput: true,
-      clipRelativeInput: true,
-      hoverOnly: false
-    });
-  }*/
-
-  //$(".cell").css('position','inherit');
-
 
 });

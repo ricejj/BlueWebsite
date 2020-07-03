@@ -31,10 +31,6 @@ img{
   margin-right: auto;
 }
 
-.OLDcontent{
-
-}
-
 /*header-related classes*/
 .header {
 
@@ -191,13 +187,7 @@ img{
 }
 */
 
-/*Classes related to the gallery display (a CSS grid)*/
-.OLDgallery{
-  display: grid;
-  margin-left:3vh;
-  margin-right:3vh;
-}
-
+/*Classes related to the gallery display*/
 /*this comes from https://css-tricks.com/seamless-responsive-photo-grid/*/
 .gallery {
   /* Prevent vertical gaps */
@@ -230,37 +220,6 @@ img{
   -webkit-column-count: 1;
   column-count:         1;
   }
-}
-
-
-/* in the end this in done in Jquery*/
-/*@media all and (orientation: portrait) {
-  .gallery{
-    grid-template-columns: 1fr;
-  }
-}
-
-@media all and (orientation: landscape) {
-  .gallery{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}*/
-
-.OLDcell{
-  padding: 10px;
-
-/*to view the cells, uncomment the end of this class*/
-  /*border-style: solid;
-  border-color: coral;
-  border-width: thick;*/
-}
-
-.OLDpictureStyle{
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 1px 5px 15px #aaaaaa;
-  pointer-events: all;
 }
 
 /*Classes related to the modals*/
