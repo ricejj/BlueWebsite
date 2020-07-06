@@ -145,6 +145,9 @@ const picsList = [
   "vexin1_IMG_4491",
   "vexin1_IMG_4529",
   "the sound of summer_IMG4410"
+  //"a-silhouette-of-spring",
+  //"a-glance-into-a-brighter-future_IMG_4334",
+  //"an-open-door-to-a-brighter-future_IMG_4334"
   /*"cadre-casual-crosswords-IMG_0308",
   "cadre-des-fleurs-sur-la-ville-IMG_0304",
   "cadre-holding-paris-IMG_0335"*/
