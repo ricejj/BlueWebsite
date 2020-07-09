@@ -144,7 +144,7 @@ const picsList = [
   "vexin1_IMG_4486",
   "vexin1_IMG_4491",
   "vexin1_IMG_4529",
-  "the sound of summer_IMG4410"
+  "the sound of summer_IMG4410",
   "a-silhouette-of-spring",
   "a-glance-into-a-brighter-future_IMG_4334",
   "an-open-door-to-a-brighter-future_IMG_4334"
